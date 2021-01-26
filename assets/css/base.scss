@@ -8,6 +8,18 @@
     box-sizing: inherit;
 }
 
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
 html {
     // 1rem = 10px
     font-size: 62.5%;
@@ -21,11 +33,11 @@ html {
     max-width: 100%;
     margin: 0 auto;
 
-    &__full-width {
+    @include element('full-width') {
         width: 100%;
     }
 
-    &__row {
+    @include element('row') {
         display: flex;
         flex-wrap: wrap;
     }
