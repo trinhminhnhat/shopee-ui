@@ -1,3 +1,7 @@
+/*
+ * Author: Trinh Minh Nhat
+ * Copyright (c) 2021 All rights reserved
+ */
 :root {
   --white-color: #fff;
   --black-color: #000;
@@ -12,7 +16,7 @@
 html {
   font-size: 62.5%;
   line-height: 1.6rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -51,11 +55,13 @@ html {
 }
 
 .header__navbar-list {
+  margin-top: 8px;
   list-style: none;
   padding-left: 0;
 }
 
 .header__navbar-item {
+  cursor: pointer;
   color: var(--white-color);
   display: inline-block;
   margin: 0 8px;
@@ -64,8 +70,12 @@ html {
   font-weight: 300;
 }
 
+.header__navbar-item:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .header__navbar-item--separate:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   height: 16px;
@@ -81,6 +91,15 @@ html {
   text-decoration: none;
 }
 
+.header__navbar-item-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .header__navbar-item-link--bold {
   font-weight: 400;
+}
+
+.header__navbar-icon-link {
+  color: var(--white-color);
+  text-decoration: none;
 }

@@ -1,45 +1,49 @@
+/*
+ * Author: Trinh Minh Nhat
+ * Copyright (c) 2021 All rights reserved
+ */
+
 :root {
-    --white-color: #fff;
-    --black-color: #000;
-    --text-color: #333;
+	--white-color: #fff;
+	--black-color: #000;
+	--text-color: #333;
 }
 
 * {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 @mixin element($element) {
-    &__#{$element} {
-        @content;
-    }
+	&__#{$element} {
+		@content;
+	}
 }
 
 @mixin modifier($modifier) {
-    &--#{$modifier} {
-        @content;
-    }
+	&--#{$modifier} {
+		@content;
+	}
 }
 
 html {
-    // 1rem = 10px
-    font-size: 62.5%;
-    line-height: 1.6rem;
-    font-family: 'Open Sans', sans-serif;
-    box-sizing: border-box;
+	// 1rem = 10px
+	font-size: 62.5%;
+	line-height: 1.6rem;
+	font-family: "Open Sans", sans-serif;
+	box-sizing: border-box;
 }
 
 .grid {
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
+	width: 1200px;
+	max-width: 100%;
+	margin: 0 auto;
 
-    @include element('full-width') {
-        width: 100%;
-    }
+	@include element("full-width") {
+		width: 100%;
+	}
 
-    @include element('row') {
-        display: flex;
-        flex-wrap: wrap;
-    }
+	@include element("row") {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
-

@@ -1,48 +1,63 @@
 // header
-@import 'base';
+@import "base";
 
 .header {
-    height: 120px;
-    background-image: linear-gradient(0, #fe6433, #f53e2d);
+	height: 120px;
+	background-image: linear-gradient(0, #fe6433, #f53e2d);
 
-    @include element('navbar') {
-        display: flex;
-        justify-content: space-between;
-    }
+	@include element("navbar") {
+		display: flex;
+		justify-content: space-between;
+	}
 
-    @include element('navbar-list') {
-        list-style: none;
-        padding-left: 0;
-    }
+	@include element("navbar-list") {
+		margin-top: 8px;
+		list-style: none;
+		padding-left: 0;
+	}
 
-    @include element('navbar-item') {
-        color: var(--white-color);
-        display: inline-block;
-        margin: 0 8px;
-        position: relative;;
-        font-size: 1.5rem;
-        font-weight: 300;
+	@include element("navbar-item") {
+		cursor: pointer;
+		color: var(--white-color);
+		display: inline-block;
+		margin: 0 8px;
+		position: relative;
+		font-size: 1.5rem;
+		font-weight: 300;
 
-        @include modifier('separate') {
-            &:after {
-                content: '';
-                display: block;
-                position: absolute;
-                height: 16px;
-                border-left: 1px solid #fb9086;
-                top: 50%;
-                right: -9px;
-                transform: translateY(-50%);
-            }
-        }
-    }
+		&:hover {
+			color: rgba(255, 255, 255, .7);
+		}
 
-    @include element('navbar-item-link') {
-        color: var(--white-color);
-        text-decoration: none;
+		@include modifier("separate") {
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				height: 16px;
+				border-left: 1px solid #fb9086;
+				top: 50%;
+				right: -9px;
+				transform: translateY(-50%);
+			}
+		}
+	}
 
-        @include modifier('bold') {
-            font-weight: 400;
-        }
-    }
+	@include element("navbar-item-link") {
+		color: var(--white-color);
+		text-decoration: none;
+
+		&:hover {
+			color: rgba(255, 255, 255, .7);
+		}
+
+		@include modifier("bold") {
+			font-weight: 400;
+		}
+	}
+
+	@include element("navbar-icon-link") {
+		color: var(--white-color);
+		text-decoration: none;
+	}
 }
