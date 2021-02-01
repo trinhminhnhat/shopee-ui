@@ -38,6 +38,18 @@
 				transform: translateY(-50%);
 			}
 		}
+
+		@include modifier("has-qr") {
+			cursor: pointer;
+
+			&:hover {
+				color: rgba(255, 255, 255, .7);
+
+				.header__qr {
+					display: block;
+				}
+			}
+		}
 	}
 
 	@include element("navbar-item-link") {
@@ -68,5 +80,51 @@
 	@include element("navbar-icon") {
 		font-size: 1.8rem;
 		margin: 0 4px;
+	}
+
+	// Header QR Code
+	@include element("qr") {
+		display: none;
+		width: 190px;
+		background-color: var(--white-color);
+		position: absolute;
+		top: 150%;
+		left: 0;
+		padding: 8px;
+		border-radius: 4px;
+		animation: fadeIn ease-in .5s;
+		
+		&::before {
+			content: '';
+			width: 100%;
+			height: 30px;
+			position: absolute;
+			top: -10%;
+			left: 0;
+		}
+	}
+
+	@include element("qr-img") {
+		width: 100%;
+	}
+
+	@include element("qr-apps") {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 5px;
+	}
+
+	@include element("qr-link") {
+		&:first-child {
+			margin-left: 11px;
+		}
+
+		&:last-child {
+			margin-right: 11px;
+		}
+	}
+
+	@include element("qr-download-app-img") {
+		height: 16px;
 	}
 }
