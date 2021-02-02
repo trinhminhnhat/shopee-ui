@@ -43,7 +43,7 @@
 			cursor: pointer;
 
 			&:hover {
-				color: rgba(255, 255, 255, .7);
+				color: rgba(255, 255, 255, 0.7);
 
 				.header__qr {
 					display: block;
@@ -55,12 +55,12 @@
 	@include element("navbar-item-link") {
 		cursor: pointer;
 		display: flex;
-    	align-items: center;
+		align-items: center;
 		color: var(--white-color);
 		text-decoration: none;
 
 		&:hover {
-			color: rgba(255, 255, 255, .7);
+			color: rgba(255, 255, 255, 0.7);
 		}
 
 		@include modifier("bold") {
@@ -73,7 +73,7 @@
 		text-decoration: none;
 
 		&:hover {
-			color: rgba(255, 255, 255, .7);
+			color: rgba(255, 255, 255, 0.7);
 		}
 	}
 
@@ -82,7 +82,7 @@
 		margin: 0 4px;
 	}
 
-	// Header QR Code
+	// Begin: Header QR Code
 	@include element("qr") {
 		display: none;
 		width: 190px;
@@ -92,10 +92,10 @@
 		left: 0;
 		padding: 8px;
 		border-radius: 4px;
-		animation: fadeIn ease-in .5s;
-		
+		animation: fadeIn ease-in 0.5s;
+
 		&::before {
-			content: '';
+			content: "";
 			width: 100%;
 			height: 30px;
 			position: absolute;
@@ -127,4 +127,79 @@
 	@include element("qr-download-app-img") {
 		height: 16px;
 	}
+	// End: Header QR Code
+
+	// Begin: Header Notification
+	@include element("notification") {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		background-color: var(--white-color);
+		width: 404px;
+		border: 1px solid #d3d3d3;
+	}
+
+	@include element("notification-header") {
+		color: #999;
+		font-weight: 400;
+		font-size: 1.6rem;
+		margin: 0 12px 0;
+		height: 40px;
+		line-height: 40px;
+	}
+
+	@include element("notification-list") {
+		padding-left: 0;
+	}
+
+	@include element("notification-item") {
+		&:hover {
+			background-color: #f7f7f7;
+		}
+
+		@include modifier("viewed") {
+			background-color: rgba(238, 77, 45, 0.1);
+		}
+	}
+
+	@include element("notification-link") {
+		display: flex;
+		text-decoration: none;
+		padding: 12px;
+	}
+
+	@include element("notification-img") {
+		width: 48px;
+		object-fit: contain;
+	}
+
+	@include element("notification-info") {
+		margin-left: 12px;
+	}
+
+	@include element("notification-name") {
+		display: block;
+		font-size: 1.5rem;
+		font-weight: 500;
+		color: var(--black-color);
+	}
+
+	@include element("notification-description") {
+		display: block;
+		font-size: 1.4rem;
+		color: #888;
+		line-height: 3rem;
+	}
+
+	@include element("notification-footer") {
+		text-align: center;
+	}
+
+	@include element("notification-footer-btn") {
+		display: inline-block;
+		text-decoration: none;
+		color: var(--text-color);
+		padding: 4px 16px;
+	}
+	// Begin: Header Notification
 }
