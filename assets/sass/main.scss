@@ -21,7 +21,7 @@
 		display: inline-flex;
 		align-items: center;
 		margin: 0 8px;
-		min-height: 20px;
+		min-height: 30px;
 		position: relative;
 		font-size: 1.5rem;
 		font-weight: 300;
@@ -46,6 +46,14 @@
 				color: rgba(255, 255, 255, 0.7);
 
 				.header__qr {
+					display: block;
+				}
+			}
+		}
+
+		@include modifier("has-notification") {
+			&:hover {
+				.header__notification {
 					display: block;
 				}
 			}
@@ -131,12 +139,50 @@
 
 	// Begin: Header Notification
 	@include element("notification") {
+		display: none;
 		position: absolute;
 		top: 100%;
 		right: 0;
+		margin-top: 20px;
 		background-color: var(--white-color);
 		width: 404px;
 		border: 1px solid #d3d3d3;
+		transform-origin: calc(100% - 20px) top;
+		animation: headerNotificationShow ease-in 0.2s;
+		will-change: opacity, transform;
+
+		&::before {
+			content: "";
+			border-bottom: 20px;
+			border-left: 20px;
+			border-right: 20px;
+			border-style: solid;
+			position: absolute;
+			top: -20px;
+			right: 5%;
+			border-color: transparent transparent var(--white-color);
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: -22px;
+			right: 0;
+			width: 90px;
+			height: 25px;
+		}
+	}
+
+	@keyframes headerNotificationShow {
+		from {
+			opacity: 0;
+			transform: scale(0);
+		}
+
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
 	}
 
 	@include element("notification-header") {
@@ -181,14 +227,16 @@
 		display: block;
 		font-size: 1.5rem;
 		font-weight: 500;
-		color: var(--black-color);
+		color: var(--text-color);
+		line-height: 2rem;
 	}
 
 	@include element("notification-description") {
 		display: block;
 		font-size: 1.4rem;
 		color: #888;
-		line-height: 3rem;
+		line-height: 2rem;
+		margin-top: 6px;
 	}
 
 	@include element("notification-footer") {
@@ -199,7 +247,8 @@
 		display: inline-block;
 		text-decoration: none;
 		color: var(--text-color);
-		padding: 4px 16px;
+		padding: 12px 16px;
+		font-weight: 400;
 	}
 	// Begin: Header Notification
 }
