@@ -59,3 +59,29 @@ html {
 		opacity: 1;
 	}
 }
+
+// Modal
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+
+	@include element("overlay") {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+
+	@include element("body") {
+		width: 300px;
+		height: 300px;
+		background-color: var(--white-color);
+		border-radius: 4px;
+		margin: auto;
+		z-index: 1;
+	}
+}
