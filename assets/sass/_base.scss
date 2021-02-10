@@ -61,6 +61,14 @@ html {
 	}
 }
 
+.mr-8 {
+	margin-right: 8px !important;
+}
+
+.ml-8 {
+	margin-left: 8px !important;
+}
+
 // Modal
 .modal {
 	position: fixed;
@@ -78,8 +86,6 @@ html {
 	}
 
 	@include element("body") {
-		background-color: var(--white-color);
-		border-radius: 4px;
 		margin: auto;
 		z-index: 1;
 	}
@@ -94,11 +100,35 @@ html {
 	text-decoration: none;
 	border: none;
 	border-radius: 2px;
+	background-color: transparent;
 	font-size: 1.5rem;
-	padding: 0;
+	padding: 0 12px;
+	outline: none;
+	color: var(--text-color);
+
+	&.btn--default:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
 
 	&.btn--primary {
 		background-color: var(--primary-color);
 		color: var(--white-color);
+	}
+
+	&.btn--disabled {
+		cursor: default;
+		filter: brightness(80%);
+	}
+
+	&.btn--sm {
+		height: 30px;
+		line-height: 30px;
+		font-size: 1.2rem;
+		padding: 0 8px;
+	}
+
+	&.btn--with-icon {
+		display: flex;
+		align-items: center;
 	}
 }
