@@ -59,6 +59,28 @@ html {
   }
 }
 
+@-webkit-keyframes growth {
+  from {
+    -webkit-transform: scale(var(--growth-from));
+            transform: scale(var(--growth-from));
+  }
+  to {
+    -webkit-transform: scale(var(--growth-to));
+            transform: scale(var(--growth-to));
+  }
+}
+
+@keyframes growth {
+  from {
+    -webkit-transform: scale(var(--growth-from));
+            transform: scale(var(--growth-from));
+  }
+  to {
+    -webkit-transform: scale(var(--growth-to));
+            transform: scale(var(--growth-to));
+  }
+}
+
 .mr-8 {
   margin-right: 8px !important;
 }
@@ -86,8 +108,12 @@ html {
 }
 
 .modal__body {
+  --growth-from: .7;
+  --growth-to: 1;
   margin: auto;
   z-index: 1;
+  -webkit-animation: growth linear .3s;
+          animation: growth linear .3s;
 }
 
 .btn {
@@ -513,4 +539,32 @@ html {
 
 .auth-form__socials-icon {
   font-size: 1.6rem;
+}
+
+.auth-form__help {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.auth-form__help-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.auth-form__help-link--forgot {
+  color: var(--primary-color);
+}
+
+.auth-form__help-link--need-help {
+  color: #939393;
+}
+
+.auth-form__help-separate {
+  display: block;
+  border-left: 1px solid var(--border-color);
+  margin: 0 16px;
 }

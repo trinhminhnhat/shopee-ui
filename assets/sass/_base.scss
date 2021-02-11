@@ -61,6 +61,16 @@ html {
 	}
 }
 
+@keyframes growth {
+	from {
+		transform: scale(var(--growth-from));
+	}
+
+	to {
+		transform: scale(var(--growth-to));
+	}
+}
+
 .mr-8 {
 	margin-right: 8px !important;
 }
@@ -86,8 +96,11 @@ html {
 	}
 
 	@include element("body") {
+		--growth-from: .7;
+		--growth-to: 1;
 		margin: auto;
 		z-index: 1;
+		animation: growth linear .3s;
 	}
 }
 

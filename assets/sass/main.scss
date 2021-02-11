@@ -341,5 +341,29 @@
 	@include element("socials-icon") {
 		font-size: 1.6rem;
 	}
+
+	@include element("help") {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	@include element("help-link") {
+		text-decoration: none;
+		font-size: 1.2rem;
+
+		@include modifier("forgot") {
+			color: var(--primary-color);
+		}
+
+		@include modifier("need-help") {
+			color: #939393;
+		}
+	}
+
+	@include element("help-separate") {
+		display: block;
+		border-left: 1px solid var(--border-color);
+		margin: 0 16px;
+	}
 }
 // End: Auth Form Modal
