@@ -2,7 +2,7 @@
 @import "base";
 
 .header {
-	height: 120px;
+	height: var(--header-height);
 	background-image: linear-gradient(0, #fe6433, #f53e2d);
 
 	@include element("navbar") {
@@ -11,7 +11,7 @@
 	}
 
 	@include element("navbar-list") {
-		margin-top: 8px;
+		margin: 6px 0;
 		list-style: none;
 		padding-left: 0;
 	}
@@ -251,6 +251,32 @@
 		font-weight: 400;
 	}
 	// End: Header Notification
+
+	@include element("logo") {
+		width: 200px;
+	}
+
+	@include element("logo-img") {
+		width: 150px;
+	}
+
+	@include element("search") {
+		border-radius: 2px;
+		height: 40px;
+		background-color: var(--white-color);
+		flex: 1;
+	}
+
+	@include element("cart") {
+		width: 150px;
+		text-align: center;
+	}
+
+	@include element("cart-icon") {
+		color: var(--white-color);
+		font-size: 2rem;
+		cursor: pointer;
+	}
 }
 
 // Begin: Auth Form Modal
@@ -367,3 +393,12 @@
 	}
 }
 // End: Auth Form Modal
+
+// Begin: Header with search
+.header-with-search {
+	display: flex;
+	align-items: center;
+	height: var(--header-with-search-height);
+}
+
+// End: Header with search

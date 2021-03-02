@@ -9,6 +9,11 @@
 	--black-color: #000;
 	--text-color: #333;
 	--border-color: #dbdbdb;
+	--header-height: 120px;
+	--navbar-height: 43px;
+	--header-with-search-height: calc(
+		var(--header-height) - var(--navbar-height)
+	);
 }
 
 * {
@@ -96,11 +101,11 @@ html {
 	}
 
 	@include element("body") {
-		--growth-from: .7;
+		--growth-from: 0.7;
 		--growth-to: 1;
 		margin: auto;
 		z-index: 1;
-		animation: growth linear .3s;
+		animation: growth linear 0.3s;
 	}
 }
 
