@@ -298,7 +298,7 @@
 		width: 95%;
 		background-color: var(--white-color);
 		border-radius: 2px;
-		box-shadow: 0 0 3px #777;
+		box-shadow: 0 0 8px rgba(0, 0, 0, .2);
 	}
 
 	@include element("search-history-heading") {
@@ -361,7 +361,7 @@
 		top: 150%;
 		min-width: 150px;
 		border-radius: 2px;
-		box-shadow: 0 0 3px #777;
+		box-shadow: 0 0 8px rgba(0, 0, 0, .2);
 		padding: 0;
 		display: none;
 
@@ -452,12 +452,61 @@
 	@include element("cart") {
 		width: 150px;
 		text-align: center;
+
+		&:hover {
+			.header__cart-list {
+				display: block;
+			}
+		}
+	}
+
+	@include element("cart-wrap") {
+		position: relative;
+		display: inline-block;
+		padding: 0 8px;
+		cursor: pointer;
+	}
+
+	@include element("cart-list") {
+		display: none;
+		position: absolute;
+		top: calc(100% + 15px);
+		right: -18px;
+		width: 450px;
+		background-color: var(--white-color);
+		border-radius: 2px;
+		box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+		animation: fadeIn ease-in 0.5s;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: -33px;
+			right: 14px;
+			border-width: 18px 20px;
+			border-style: solid;
+			border-color: transparent transparent #fff transparent;
+			cursor: pointer;
+		}
+
+		@include modifier("empty") {
+			padding: 25px 0;
+		}
+	}
+
+	@include element("cart-empty-img") {
+		width: 40%;
+	}
+
+	@include element("cart-list-empty-msg") {
+		color: var(--text-color);
+		font-size: 1.4rem;
+		margin-top: 8px;
 	}
 
 	@include element("cart-icon") {
 		color: var(--white-color);
 		font-size: 2rem;
-		cursor: pointer;
 	}
 }
 
