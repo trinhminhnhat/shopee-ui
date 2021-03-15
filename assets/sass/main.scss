@@ -467,7 +467,20 @@
 		cursor: pointer;
 	}
 
+	@include element("cart-quantity") {
+		position: absolute;
+		top: -11px;
+		right: -13px;
+		padding: 1px 8px;
+		font-size: 1.2rem;
+		background-color: var(--white-color);
+		color: var(--primary-color);
+		border-radius: 11px;
+		border: 2px solid #ee4d2d;
+	}
+
 	@include element("cart-list") {
+		cursor: default;
 		display: none;
 		position: absolute;
 		top: calc(100% + 15px);
@@ -491,14 +504,22 @@
 
 		@include modifier("empty") {
 			padding: 25px 0;
+
+			.header__cart-empty-img, .header__cart-list-empty-msg {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 	}
 
 	@include element("cart-empty-img") {
+		display: none;
 		width: 40%;
 	}
 
 	@include element("cart-list-empty-msg") {
+		display: none;
 		color: var(--text-color);
 		font-size: 1.4rem;
 		margin-top: 8px;
@@ -507,6 +528,99 @@
 	@include element("cart-icon") {
 		color: var(--white-color);
 		font-size: 2rem;
+	}
+
+	@include element("cart-heading") {
+		font-size: 1.4rem;
+		font-weight: 400;
+		color: #999;
+		text-align: left;	
+		margin: 12px;
+	}
+
+	@include element("cart-list-item") {
+		padding-left: 0;
+		list-style: none;
+		margin: 12px 0;
+	}
+
+	@include element("cart-item") {
+		display: flex;
+		align-items: center;
+
+		&:hover {
+			background-color: #f8f8f8;
+		}
+	}
+
+	@include element("cart-item-img") {
+		width: 42px;
+    	height: 42px;
+		margin: 12px;
+		border: 1px solid var(--border-color);
+	}
+
+	@include element("cart-item-info") {
+		width: 100%;
+		margin-right: 12px;
+	}
+
+	@include element("cart-item-head") {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	@include element("cart-item-name") {
+		font-size: 1.4rem;
+		font-weight: 400;
+		margin: 0;
+	}
+
+	@include element("cart-item-price") {
+		font-size: 1.4rem;
+		font-weight: 400;
+		color: var(--primary-color);
+	}
+
+	@include element("cart-item-multiply") {
+		margin: 0 4px;
+		color: #757575;
+	}
+
+	@include element("cart-item-quantity") {
+		color: #757575;
+		font-size: 1.2rem;
+	}
+
+	@include element("cart-item-body") {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 6px;
+	}
+
+	@include element("cart-item-description") {
+		color: #757575;
+		font-size: 1.3rem;
+	}
+
+	@include element("cart-item-remove") {
+		color: var(--text-color);
+		font-size: 1.4rem;
+
+		&:hover {
+			cursor: pointer;
+			color: var(--primary-color);
+		}
+	}
+
+	@include element("cart-view") {
+		margin: 0 12px 12px 0;
+		float: right;
+
+		&:hover {
+			background-color: #f05d51;
+		}
 	}
 }
 
