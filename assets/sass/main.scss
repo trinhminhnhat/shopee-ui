@@ -11,6 +11,7 @@
 	}
 
 	@include element("navbar-list") {
+		display: flex;
 		margin: 6px 0;
 		list-style: none;
 		padding-left: 0;
@@ -57,6 +58,96 @@
 					display: block;
 				}
 			}
+		}
+	}
+
+	@include element("navbar-user") {
+		cursor: pointer;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+
+		&:hover {
+			.header__navbar-user-menu {
+				display: block;
+			}
+		}
+	}
+
+	@include element("navbar-user-img") {
+		width: 22px;
+		height: 22px;
+		border-radius: 50%;
+		border: 1px solid rgba(0, 0, 0, .1);
+	}
+
+	@include element("navbar-user-name") {
+		margin-left: 8px;
+		font-size: 1.4rem;
+		font-weight: 400;
+	}
+
+	@include element("navbar-user-menu") {
+		display: none;
+		background-color: var(--white-color);
+		border-radius: 2px;
+		position: absolute;
+		padding-left: 0;
+		top: 130%;
+		right: 0;
+		box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+		width: 160px;
+		z-index: 1;
+
+		&::before {
+			content: "";
+			border-bottom: 15px;
+			border-left: 15px;
+			border-right: 15px;
+			border-style: solid;
+			position: absolute;
+			top: -16px;
+			right: 5%;
+			border-color: transparent transparent var(--white-color);
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -16px;
+			right: 0px;
+			width: 88%;
+			height: 16px;
+		}
+	}
+
+	@include element("navbar-user-menu-item") {
+		list-style: none;
+		
+		&:first-child a{
+			border-top-left-radius: 2px;
+			border-top-right-radius: 2px;
+		}
+
+		&:last-child a{
+			border-bottom-left-radius: 2px;
+			border-bottom-right-radius: 2px;
+		}
+
+		a {
+			color: var(--text-color);
+			font-size: 1.4rem;
+			padding: 8px 16px;
+			display: block;
+			text-decoration: none;
+
+			&:hover {
+				background-color: #fafafa;
+			}
+
+			
 		}
 	}
 
@@ -150,6 +241,7 @@
 		transform-origin: calc(100% - 20px) top;
 		animation: headerNotificationShow ease-in 0.2s;
 		will-change: opacity, transform;
+		z-index: 1;
 
 		&::before {
 			content: "";
