@@ -202,7 +202,7 @@ html {
   margin: 0 8px;
   min-height: 30px;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 300;
 }
 
@@ -260,7 +260,7 @@ html {
 }
 
 .header__navbar-user-name {
-  margin-left: 8px;
+  margin-left: 4px;
   font-size: 1.4rem;
   font-weight: 400;
 }
@@ -327,6 +327,10 @@ html {
   background-color: #fafafa;
 }
 
+.header__navbar-user-menu-item--separate {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .header__navbar-item-link {
   cursor: pointer;
   display: -webkit-box;
@@ -354,6 +358,10 @@ html {
 
 .header__navbar-icon-link:hover {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.header__navbar-icon-link:nth-child(1) {
+  margin-left: 3px;
 }
 
 .header__navbar-icon {
@@ -411,15 +419,17 @@ html {
 
 .header__notification {
   display: none;
+  border-radius: 2px;
   position: absolute;
   top: 100%;
   right: 0;
   margin-top: 20px;
   background-color: var(--white-color);
   width: 404px;
-  border: 1px solid #d3d3d3;
-  -webkit-transform-origin: calc(100% - 20px) top;
-          transform-origin: calc(100% - 20px) top;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  -webkit-transform-origin: calc(100% - 25px) top;
+          transform-origin: calc(100% - 25px) top;
   -webkit-animation: headerNotificationShow ease-in 0.2s;
           animation: headerNotificationShow ease-in 0.2s;
   will-change: opacity, transform;
@@ -542,6 +552,11 @@ html {
 
 .header__logo {
   width: 200px;
+}
+
+.header__logo-link {
+  color: transparent;
+  text-decoration: none;
 }
 
 .header__logo-img {
