@@ -143,8 +143,8 @@ html {
   text-decoration: none;
   border: none;
   border-radius: 2px;
-  background-color: transparent;
-  font-size: 1.5rem;
+  background-color: var(--white-color);
+  font-size: 1.4rem;
   padding: 0 12px;
   outline: none;
   color: var(--text-color);
@@ -179,6 +179,72 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.select-input {
+  cursor: pointer;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  min-width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.select-input:hover .select-input__list {
+  display: block;
+}
+
+.select-input__label {
+  font-size: 1.4rem;
+}
+
+.select-input__icon {
+  color: #4a4a4a;
+  font-size: 1.2rem;
+}
+
+.select-input__list {
+  display: none;
+  position: absolute;
+  top: 91%;
+  left: 0;
+  right: 0;
+  list-style: none;
+  padding: 8px 0;
+  border-radius: 2px;
+  background-color: var(--white-color);
+}
+
+.select-input__list::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: -11px;
+  left: 0;
+}
+
+.select-input__link {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  padding: 8px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.select-input__link:hover {
+  color: var(--primary-color);
 }
 
 .header {
@@ -692,6 +758,7 @@ html {
           box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   padding: 0;
   display: none;
+  z-index: 1;
 }
 
 .header__search-option::after {
@@ -1110,6 +1177,7 @@ html {
 }
 
 .homepage {
+  padding-top: 36px;
   background-color: #f5f5f5;
 }
 
@@ -1120,6 +1188,7 @@ html {
 
 .homepage .category__heading {
   color: var(--text-color);
+  margin: 0;
   font-size: 1.6rem;
   padding: 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -1134,7 +1203,7 @@ html {
   padding-left: 0;
   padding-bottom: 8px;
   list-style: none;
-  margin-left: 12px;
+  margin: 12px 0 12px 12px;
 }
 
 .homepage .category-list-item__link {
@@ -1144,7 +1213,7 @@ html {
   font-size: 1.4rem;
   color: var(--text-color);
   text-decoration: none;
-  padding: 4px 22px;
+  padding: 8px 32px 8px 22px;
   -webkit-transition: right linear .1s;
   transition: right linear .1s;
 }
@@ -1167,4 +1236,87 @@ html {
   content: '';
   border: 5px solid;
   border-color: transparent transparent transparent var(--primary-color);
+}
+
+.homepage .filter {
+  position: relative;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 12px 22px;
+}
+
+.homepage .filter__label {
+  color: #555;
+  font-size: 1.4rem;
+  margin-right: 12px;
+}
+
+.homepage .filter__btn {
+  min-width: 120px;
+  margin-right: 12px;
+}
+
+.homepage .filter-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+}
+
+.homepage .filter-pagination__wrap {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  margin-right: 22px;
+}
+
+.homepage .filter-pagination__wrap-current-page {
+  color: var(--primary-color);
+}
+
+.homepage .filter-pagination__control {
+  border-radius: 2px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 68px;
+  height: 34px;
+}
+
+.homepage .filter-pagination__control-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: var(--white-color);
+  text-decoration: none;
+}
+
+.homepage .filter-pagination__control-btn:first-child {
+  border: 1px solid #eee;
+}
+
+.homepage .filter-pagination__control-btn i {
+  color: #4a4a4a;
+  margin: auto;
+}
+
+.homepage .filter-pagination__control-btn--disable {
+  background-color: #f9f9f9;
+  cursor: default;
+}
+
+.homepage .filter-pagination__control-btn--disable i {
+  color: #ccc;
 }
