@@ -987,5 +987,50 @@
 			}
 		}
 	}
+
+	.product {
+
+	}
+
+	.product-item {
+		margin-top: 10px;
+		background-color: var(--white-color);
+
+		@include element("img") {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			padding-top: 100%;
+		}
+
+		@include element("name") {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			text-overflow: ellipsis;
+			font-size: 1.4rem;
+			font-weight: 400;
+			line-height: 1.8rem;
+			height: 3.6rem;
+			overflow: hidden;
+			margin: 10px;
+		}
+
+		@include element("price") {
+
+		}
+
+		@include element("price-old") {
+
+		}
+
+		@include element("price-new") {
+
+		}
+
+		@include element("action") {
+
+		}
+	}
 }
 // End: Homepage
