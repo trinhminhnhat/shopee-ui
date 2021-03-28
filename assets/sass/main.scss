@@ -1017,19 +1017,83 @@
 		}
 
 		@include element("price") {
-
+			display: flex;
+			align-items: baseline;
+			flex-wrap: wrap;
 		}
 
 		@include element("price-old") {
-
+			color: #666;
+			font-size: 1.4rem;
+			margin-left: 10px;
+			text-decoration: line-through;
 		}
 
 		@include element("price-new") {
-
+			color: var(--primary-color);
+			margin-left: 10px;
+			font-size: 1.6rem;
 		}
 
 		@include element("action") {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 10px;
+		}
 
+		@include element("heart") {
+			font-size: 1.2rem;
+		}
+
+		@include element("heart-icon") {
+			@include modifier("normal") {
+			
+			}
+			
+			@include modifier("like") {
+				display: none;
+				color: rgb(245, 61, 47);
+			}
+		}
+
+		@include element("heart-liked") {
+			.product-item__heart-icon--like {
+				display: inline-block;
+			}
+
+			.product-item__heart-icon--normal {
+				display: none;
+			}
+		}
+
+		@include element("rating") {
+			font-size: 1rem;
+			transform: scale(0.8);
+			transform-origin: right;
+			color: #d5d5d5;
+			margin-left: auto;
+		}
+
+		@include element("rating-icon") {
+			@include modifier("gold") {
+				color: var(--star-gold-color);
+			}
+		}
+
+		@include element("sold") {
+			font-size: 1.2rem;
+			color: var(--text-color);
+			margin-left: 6px;
+		}
+
+		@include element("origin") {
+			display: flex;
+			justify-content: space-between;
+			margin: 0 10px;
+			color: #595959;
+			font-size: 1.2rem;
+			font-weight: 300;
 		}
 	}
 }

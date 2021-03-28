@@ -8,6 +8,7 @@
   --black-color: #000;
   --text-color: #333;
   --border-color: #dbdbdb;
+  --star-gold-color: #FFCE3D;
   --header-height: 120px;
   --navbar-height: 43px;
   --header-with-search-height: calc(
@@ -1350,4 +1351,91 @@ html {
   height: 3.6rem;
   overflow: hidden;
   margin: 10px;
+}
+
+.homepage .product-item__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.homepage .product-item__price-old {
+  color: #666;
+  font-size: 1.4rem;
+  margin-left: 10px;
+  text-decoration: line-through;
+}
+
+.homepage .product-item__price-new {
+  color: var(--primary-color);
+  margin-left: 10px;
+  font-size: 1.6rem;
+}
+
+.homepage .product-item__action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.homepage .product-item__heart {
+  font-size: 1.2rem;
+}
+
+.homepage .product-item__heart-icon--like {
+  display: none;
+  color: #f53d2f;
+}
+
+.homepage .product-item__heart-liked .product-item__heart-icon--like {
+  display: inline-block;
+}
+
+.homepage .product-item__heart-liked .product-item__heart-icon--normal {
+  display: none;
+}
+
+.homepage .product-item__rating {
+  font-size: 1rem;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  color: #d5d5d5;
+  margin-left: auto;
+}
+
+.homepage .product-item__rating-icon--gold {
+  color: var(--star-gold-color);
+}
+
+.homepage .product-item__sold {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-left: 6px;
+}
+
+.homepage .product-item__origin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 10px;
+  color: #595959;
+  font-size: 1.2rem;
+  font-weight: 300;
 }
