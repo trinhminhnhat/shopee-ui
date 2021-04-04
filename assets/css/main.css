@@ -1329,6 +1329,7 @@ html {
 }
 
 .homepage .product-item {
+  position: relative;
   margin-top: 10px;
   background-color: var(--white-color);
 }
@@ -1438,4 +1439,44 @@ html {
   color: #595959;
   font-size: 1.2rem;
   font-weight: 300;
+}
+
+.homepage .product-item__ribbon-favorite {
+  position: absolute;
+  top: 10px;
+  left: -4px;
+  color: var(--primary-color);
+  background-color: currentColor;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 4px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.homepage .product-item__ribbon-favorite::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  border-top: 3px solid currentColor;
+  border-left: 3px solid transparent;
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
+}
+
+.homepage .product-item__ribbon-favorite i {
+  color: var(--white-color);
+  font-size: 0.9rem;
+  margin-right: 4px;
+}
+
+.homepage .product-item__ribbon-favorite span {
+  color: var(--white-color);
 }
