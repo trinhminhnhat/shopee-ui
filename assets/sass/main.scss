@@ -1131,6 +1131,36 @@
 				color: var(--white-color);
 			}
 		}
+
+		@include element("ribbon-sale-off") {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 40px;
+			background-color: rgba(255, 216, 64, 0.8);
+			text-align: center;
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				border-width: 0 20px 5px;
+				border-style: solid;
+				border-color: transparent rgba(255, 216, 64, 0.8) transparent;
+			}
+		}
+
+		@include element("sale-off-percent") {
+			color: #ee4d2d;
+			font-weight: bold;
+			font-size: 1.2rem;
+		}
+
+		@include element("sale-off-label") {
+			color: var(--white-color);
+			font-size: 1.2rem;
+		}
 	}
 }
 // End: Homepage

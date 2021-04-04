@@ -1480,3 +1480,33 @@ html {
 .homepage .product-item__ribbon-favorite span {
   color: var(--white-color);
 }
+
+.homepage .product-item__ribbon-sale-off {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  background-color: rgba(255, 216, 64, 0.8);
+  text-align: center;
+}
+
+.homepage .product-item__ribbon-sale-off::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  border-width: 0 20px 5px;
+  border-style: solid;
+  border-color: transparent rgba(255, 216, 64, 0.8) transparent;
+}
+
+.homepage .product-item__sale-off-percent {
+  color: #ee4d2d;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.homepage .product-item__sale-off-label {
+  color: var(--white-color);
+  font-size: 1.2rem;
+}
