@@ -1014,6 +1014,10 @@
 
 	.product {
 		margin-bottom: 10px;
+
+		@include element("pagination") {
+			margin: 30px 0;
+		}
 	}
 
 	.product-item {

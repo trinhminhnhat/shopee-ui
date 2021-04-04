@@ -237,3 +237,41 @@ html {
 		}
 	}
 }
+
+// Pagination
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+}
+
+.pagination-item {
+	margin: 0 8px;
+	font-size: 1.6rem;
+	list-style: none;
+
+	&__link {
+		display: inline-block;
+		border-radius: 2px;
+		color: #939393;
+		text-decoration: none;
+		min-width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+
+		
+	}
+
+	&--active {
+		.pagination-item__link {
+			color: var(--white-color);
+			background-color: var(--primary-color);
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+}
