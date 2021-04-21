@@ -742,6 +742,48 @@
 			background-color: #f05d51;
 		}
 	}
+
+	@include element("sort-bar") {
+		display: none;
+		position: fixed;
+		top: var(--header-height);
+		left: 0;
+		right: 0;
+		height: var(--header-sort-bar-height);
+		background-color: var(--white-color);
+		border-top: 1px solid #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+	}
+	@include element("sort-item") {
+		list-style: none;
+		flex: 1;
+		position: relative;
+
+		&:not(:first-child)::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+			height: 60%;
+			border-left: 1px solid #e5e5e5;
+		}
+	}
+
+	@include element("sort-item-link") {
+		font-size: 14px;
+		text-decoration: none;
+		text-align: center;
+		color: var(--text-color);
+		height: 100%;
+		display: block;
+		line-height: var(--header-sort-bar-height);
+
+		&--active {
+			color: var(--primary-color);
+		}
+	}
+
 }
 
 // Begin: Auth Form Modal
