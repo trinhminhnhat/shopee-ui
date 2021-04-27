@@ -358,6 +358,8 @@
 	}
 
 	@include element("logo-link") {
+		display: block;
+		line-height: 0;
 		color: transparent;
 		text-decoration: none;
 	}
@@ -373,6 +375,23 @@
 		height: 40px;
 		background-color: var(--white-color);
 		flex: 1;
+	}
+
+	@include element("mobile-search") {
+		padding: 0 8px;
+	}
+
+	@include element("mobile-search-icon") {
+		font-size: 2.2rem;
+		color: var(--white-color);
+	}
+
+	@include element("search-checkbox") {
+		&:checked {
+			~ .header__search {
+				display: flex;
+			}
+		}
 	}
 
 	@include element("search-select") {
