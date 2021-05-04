@@ -30,34 +30,6 @@ html {
           box-sizing: border-box;
 }
 
-.grid__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-left: -5px;
-  margin-right: -5px;
-}
-
-.grid__column-2 {
-  padding-left: 5px;
-  padding-right: 5px;
-  width: 16.6667%;
-}
-
-.grid__column-2-4 {
-  padding-left: 5px;
-  padding-right: 5px;
-  width: 20%;
-}
-
-.grid__column-10 {
-  padding-left: 5px;
-  padding-right: 5px;
-  width: 83.3333%;
-}
-
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -283,6 +255,10 @@ html {
 
 .pagination-item--active .pagination-item__link:hover {
   opacity: 0.8;
+}
+
+.app {
+  overflow: hidden;
 }
 
 .header {
@@ -919,6 +895,7 @@ html {
   display: inline-block;
   padding: 0 8px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-quantity {
@@ -1366,6 +1343,61 @@ html {
   content: '';
   border: 5px solid;
   border-color: transparent transparent transparent var(--primary-color);
+}
+
+.homepage .mobile-category__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.homepage .mobile-category__list::-webkit-scrollbar {
+  display: none;
+}
+
+.homepage .mobile-category__item {
+  list-style: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.homepage .mobile-category__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.homepage .mobile-category__item:nth-of-type(3n + 1) .mobile-category__link {
+  background-color: #87afd8;
+}
+
+.homepage .mobile-category__item:nth-of-type(3n + 2) .mobile-category__link {
+  background-color: #76c9bd;
+}
+
+.homepage .mobile-category__item:nth-of-type(3n + 3) .mobile-category__link {
+  background-color: #88cf81;
+}
+
+.homepage .mobile-category__link {
+  display: block;
+  width: 110px;
+  height: 4rem;
+  text-decoration: none;
+  color: var(--white-color);
+  text-align: center;
+  border-radius: 2px;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .homepage .filter {
