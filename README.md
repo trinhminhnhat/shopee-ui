@@ -7,4 +7,7 @@ Build layout similar to Shopee
 [**https://trinhminhnhat.github.io/shopee-ui/**](https://trinhminhnhat.github.io/shopee-ui/)
 
 ## Author
-[**Trinh Minh Nhat**](https://github.com/trinhminhnhat)
+[**Trịnh Minh Nhật**](https://github.com/trinhminhnhat)
+
+## References
+[**https://fullstack.edu.vn/**](https://fullstack.edu.vn/)
